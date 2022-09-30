@@ -9,6 +9,7 @@ public class TestCharacterInput : MonoBehaviour
 {
     private PlayerControls ctrls;
     private Rigidbody rBody;
+    public float speedMultiplier;
     private Vector2 move;
     private Vector3 m;
     private Vector3 v;
@@ -43,25 +44,22 @@ public class TestCharacterInput : MonoBehaviour
 
     private void HandleMovement()
     {
-        if ( Mathf.Abs(move.y) >=0.5f)
+        cAnimator.SetFloat(RunDirectionFloat, move.y);
+        if ( Mathf.Abs(move.y) >=0.25f)
         {
-            
             if (move.y > .25)
             {
-                cAnimator.SetFloat("RunDirectionFloat", move.y);
-                transform.Translate(m, Space.Self);
+                transform.Translate(m * speedMultiplier, Space.Self);
                 cAnimator.SetBool("IsMoving", true);
             }
             else if (move.y< (-.25))
             {
-                cAnimator.SetFloat("RunDirectionFloat", move.y);
                 transform.Translate(v, Space.Self);
                 cAnimator.SetBool("IsMoving", true);
             }
         }
-        
-        else cAnimator.SetBool("IsMoving", false);
-        cAnimator.SetFloat("RunDirectionFloat", 0);
+        else
+            cAnimator.SetBool("IsMoving", false);
     }
 
     private void HandleRotation()
@@ -69,7 +67,7 @@ public class TestCharacterInput : MonoBehaviour
         if (Mathf.Abs(move.x) >=0.5f)
         {
             cAnimator.SetFloat("TurnDirectionFloat", move.x);
-            transform.Rotate(r*move.x, Space.World);
+            transform.Rotate(r*move.x*speedMultiplier, Space.World);
         }
         else 
             cAnimator.SetFloat("TurnDirectionFloat", 0);
