@@ -62,6 +62,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Slide"",
+                    ""type"": ""Button"",
+                    ""id"": ""2191a2fa-8c54-4028-a87a-70b93f15ac32"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -119,6 +128,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Boost"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f72f11f6-0292-4264-9f60-b57c9d372213"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slide"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e7b3d519-ed94-450a-91e7-c232c60b1475"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slide"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -131,6 +162,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Boost = m_Player.FindAction("Boost", throwIfNotFound: true);
+        m_Player_Slide = m_Player.FindAction("Slide", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -194,6 +226,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Boost;
+    private readonly InputAction m_Player_Slide;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -202,6 +235,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Boost => m_Wrapper.m_Player_Boost;
+        public InputAction @Slide => m_Wrapper.m_Player_Slide;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -223,6 +257,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Boost.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBoost;
                 @Boost.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBoost;
                 @Boost.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBoost;
+                @Slide.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSlide;
+                @Slide.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSlide;
+                @Slide.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSlide;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -239,6 +276,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Boost.started += instance.OnBoost;
                 @Boost.performed += instance.OnBoost;
                 @Boost.canceled += instance.OnBoost;
+                @Slide.started += instance.OnSlide;
+                @Slide.performed += instance.OnSlide;
+                @Slide.canceled += instance.OnSlide;
             }
         }
     }
@@ -249,5 +289,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnBoost(InputAction.CallbackContext context);
+        void OnSlide(InputAction.CallbackContext context);
     }
 }

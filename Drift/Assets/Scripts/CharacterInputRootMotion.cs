@@ -22,6 +22,7 @@ public class CharacterInputRootMotion : MonoBehaviour
     private static readonly int RunDirectionFloat = Animator.StringToHash("RunDirectionFloat");
     private static readonly int Jump = Animator.StringToHash("Jump");
     private static readonly int OnGround = Animator.StringToHash("OnGround");
+    private static readonly int Slide = Animator.StringToHash("Slide");
 
     void Awake()
     {
@@ -29,6 +30,7 @@ public class CharacterInputRootMotion : MonoBehaviour
         ctrls = new PlayerControls();
         rBody = GetComponent<Rigidbody>();
         ctrls.Player.Jump.performed += ctx => CharacterJump();
+        ctrls.Player.Slide.performed += ctx => CharacterSlide();
         ctrls.Player.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
         ctrls.Player.Move.canceled += ctx => move = Vector2.zero;
         
@@ -94,6 +96,12 @@ public class CharacterInputRootMotion : MonoBehaviour
             rBody.AddRelativeForce(j, ForceMode.Impulse);
         }
         else Debug.Log("Not Grounded");
+    }
+
+    public void CharacterSlide()
+    {
+        cAnimator.SetTrigger(Slide);
+        Debug.Log("Slide");
     }
     
     
