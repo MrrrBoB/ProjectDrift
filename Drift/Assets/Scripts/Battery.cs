@@ -1,21 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
+[RequireComponent(typeof(Slider))]
 public class Battery : MonoBehaviour
 {
     [SerializeField]
     private float currentCharge;
-    public float chargeLoss;
     public float maxCharge;
     public float chargeLossPerTick;
+
+    [SerializeField]
+    private Slider sliderBar;
     private WaitForSeconds wfs;
     private Coroutine countDown;
     public bool pauseDeplete;
     
     void Start()
     {
-        wfs = new WaitForSeconds(.5f);
+        wfs = new WaitForSeconds(.1f);
+        currentCharge = maxCharge;
+        sliderBar.maxValue = maxCharge;
+        sliderBar.value = currentCharge;
+        beginBatteryDrain();
     }
 
     // Update is called once per frame
@@ -29,15 +37,33 @@ public class Battery : MonoBehaviour
                 yield return null;
             }
             yield return wfs;
-            currentCharge -= chargeLossPerTick;
+            changeCharge(-chargeLossPerTick);
         }
-        
     }
 
+    
     public void AddCharge(float val)
     {
         currentCharge += val;
         if (currentCharge > maxCharge)
             currentCharge = maxCharge;
     }
+
+    private void changeCharge(float val)
+    {
+        currentCharge += val;
+        sliderBar.value = currentCharge;
+    }
+
+    public void beginBatteryDrain()
+    {
+        countDown = StartCoroutine(CountDown());
+    }
+    
+
+    private void StopDrain()
+    {
+        StopCoroutine(countDown);
+    }
+    
 }
