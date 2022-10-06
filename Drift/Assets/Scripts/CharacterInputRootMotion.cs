@@ -10,13 +10,15 @@ public class CharacterInputRootMotion : MonoBehaviour
     private PlayerControls ctrls;
     private Rigidbody rBody;
     public float speedMultiplier;
+    private float turnLock = 1;
     private Vector2 move;
     private bool canJump;
     //Legacy movement vectors, now are controlled via animation
     private Vector3 m;
     private Vector3 rayOffset;
     private Vector3 r;
-    private Vector3 j;
+    private Vector3 jumpForce;
+    private Vector3 jumpForceStationary;
     private Animator cAnimator;
     private static readonly int IsRunning = Animator.StringToHash("IsRunning");
     private static readonly int RunDirectionFloat = Animator.StringToHash("RunDirectionFloat");
@@ -39,7 +41,8 @@ public class CharacterInputRootMotion : MonoBehaviour
     private void Start()
     {
         m = new Vector3(0f, 0f, Time.deltaTime * 2f);
-        j = new Vector3(0, 10f, 1f);
+        jumpForce = new Vector3(0, 6f, 15f);
+        jumpForceStationary = new Vector3(0, 6f, 0f);
         r = new Vector3(0f, Time.deltaTime*20f, 0f);
         rayOffset = new Vector3(0f, 0.5f, 0f);
         cAnimator.SetBool("OnGround",IsGrounded());
@@ -68,7 +71,6 @@ public class CharacterInputRootMotion : MonoBehaviour
             }
             else if (move.y< (-.25))
             {
-                //transform.Translate(v, Space.Self);
                 cAnimator.SetBool("IsMoving", true);
             }
         }
@@ -81,7 +83,7 @@ public class CharacterInputRootMotion : MonoBehaviour
         if (Mathf.Abs(move.x) >=0.5f)
         {
             cAnimator.SetFloat("TurnDirectionFloat", move.x);
-            transform.Rotate(r * (move.x * (1+(speedMultiplier/2))), Space.World);
+            transform.Rotate(r * (move.x * (1+(speedMultiplier/2)) * turnLock), Space.World);
         }
         else 
             cAnimator.SetFloat("TurnDirectionFloat", 0);
@@ -92,8 +94,13 @@ public class CharacterInputRootMotion : MonoBehaviour
         if (IsGrounded())
         {
             cAnimator.applyRootMotion = false;
+            rBody.velocity = Vector3.zero;
             cAnimator.SetTrigger(Jump);
-            rBody.AddRelativeForce(j, ForceMode.Impulse);
+            if (move.y > .25)
+                rBody.AddRelativeForce(jumpForce, ForceMode.Impulse);
+            else
+                rBody.AddRelativeForce(jumpForceStationary, ForceMode.Impulse);
+
         }
         else Debug.Log("Not Grounded");
     }
@@ -117,6 +124,9 @@ public class CharacterInputRootMotion : MonoBehaviour
             //Set animator bool isFalling to true;
             Debug.Log("Left the ground");
             cAnimator.SetBool(OnGround, false);
+            cAnimator.applyRootMotion = false;
+            rBody.AddForce(rBody.velocity);
+            turnLock = 0;
         }
         else Debug.Log("Still on ground");
     }
@@ -128,6 +138,7 @@ public class CharacterInputRootMotion : MonoBehaviour
             Debug.Log("Back on ground");
             cAnimator.applyRootMotion = true;
             cAnimator.SetBool(OnGround, true);
+            turnLock = 1;
             //Set animator bool is falling to false;
         }
         else Debug.Log("Hit something midair");
