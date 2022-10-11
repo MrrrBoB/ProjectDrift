@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd78f90e7d2b094392f899522c408dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hazardMaterial: {fileID: 2100000, guid: 500368e50c7da714f9d8bdf0b50bd9f1, type: 2}
+  hazardMaterial: {fileID: 2100000, guid: 7423979fe325e1742b0fac870f1f8c34, type: 2}
   playerHitEvent:
     m_PersistentCalls:
       m_Calls:
@@ -342,7 +342,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f4cad353e880f684eb3e577e00ce0dbe, type: 2}
+  - {fileID: 2100000, guid: 0eec1a23c31ff4d4bb3260a18c65cef0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
