@@ -9,7 +9,7 @@ public class CharacterInputRootMotion : MonoBehaviour
 {
     private PlayerControls ctrls;
     private Rigidbody rBody;
-    public float speedMultiplier;
+    [SerializeField] private float SpeedMultiplier;
     private float turnLock = 1;
     private Vector2 move;
     private bool canJump;
@@ -46,6 +46,7 @@ public class CharacterInputRootMotion : MonoBehaviour
         r = new Vector3(0f, Time.deltaTime*20f, 0f);
         rayOffset = new Vector3(0f, 0.5f, 0f);
         cAnimator.SetBool("OnGround",IsGrounded());
+        SpeedMultiplier = 0;
     }
     private void Update()
     {
@@ -66,7 +67,7 @@ public class CharacterInputRootMotion : MonoBehaviour
         {
             if (move.y > .25)
             {
-                transform.Translate(m * speedMultiplier, Space.Self);
+                transform.Translate(m * SpeedMultiplier, Space.Self);
                 cAnimator.SetBool("IsMoving", true);
             }
             else if (move.y< (-.25))
@@ -80,10 +81,10 @@ public class CharacterInputRootMotion : MonoBehaviour
 
     private void HandleRotation()
     {
-        if (Mathf.Abs(move.x) >=0.5f)
+        if (Mathf.Abs(move.x) >=0.15f)
         {
             cAnimator.SetFloat("TurnDirectionFloat", move.x);
-            transform.Rotate(r * (move.x * (1+(speedMultiplier/2)) * turnLock), Space.World);
+            transform.Rotate(r * (move.x * (1+(SpeedMultiplier/2)) * turnLock), Space.World);
         }
         else 
             cAnimator.SetFloat("TurnDirectionFloat", 0);
@@ -97,7 +98,7 @@ public class CharacterInputRootMotion : MonoBehaviour
             rBody.velocity = Vector3.zero;
             cAnimator.SetTrigger(Jump);
             if (move.y > .25)
-                rBody.AddRelativeForce(jumpForce, ForceMode.Impulse);
+                rBody.AddRelativeForce(jumpForce+(jumpForce*(SpeedMultiplier*.5f)), ForceMode.Impulse);
             else
                 rBody.AddRelativeForce(jumpForceStationary, ForceMode.Impulse);
 
@@ -122,28 +123,32 @@ public class CharacterInputRootMotion : MonoBehaviour
         if (!IsGrounded())
         {
             //Set animator bool isFalling to true;
-            Debug.Log("Left the ground");
+            //Debug.Log("Left the ground");
             cAnimator.SetBool(OnGround, false);
             cAnimator.applyRootMotion = false;
             rBody.AddForce(rBody.velocity);
             turnLock = 0;
         }
-        else Debug.Log("Still on ground");
+        //else Debug.Log("Still on ground");
     }
 
     public void OnCollisionEnter(Collision collision)
     {
         if (IsGrounded())
         {
-            Debug.Log("Back on ground");
+            //Debug.Log("Back on ground");
             cAnimator.applyRootMotion = true;
             cAnimator.SetBool(OnGround, true);
             turnLock = 1;
             //Set animator bool is falling to false;
         }
-        else Debug.Log("Hit something midair");
+        //else Debug.Log("Hit something midair");
     }
-    
+
+    public void SetSpeedMultiplier(float m)
+    {
+        SpeedMultiplier = m;
+    }
     
     
     private void OnEnable()
