@@ -10,7 +10,7 @@ public class LevelPiece : MonoBehaviour
     public Vector3 nextLevelCoordinate;
     public GameObject nextPiecePlacer;
     public LevelBuilderData builderData;
-    private int lifeCycles = 5;
+    private int lifeCycles = 3;
     public UnityEvent deathEvent;
     public UnityEvent InitializeEvent;
 

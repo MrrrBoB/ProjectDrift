@@ -159,4 +159,5 @@ public class CharacterInputRootMotion : MonoBehaviour
     {
         ctrls.Player.Disable();
     }
+    
 }
