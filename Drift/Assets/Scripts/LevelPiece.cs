@@ -12,6 +12,7 @@ public class LevelPiece : MonoBehaviour
     public LevelBuilderData builderData;
     private int lifeCycles = 5;
     public UnityEvent deathEvent;
+    public UnityEvent InitializeEvent;
 
     private void Start()
     {
@@ -27,5 +28,10 @@ public class LevelPiece : MonoBehaviour
             deathEvent.Invoke();
             Destroy(gameObject);
         }
+    }
+
+    public void Initialize()
+    {
+        InitializeEvent.Invoke();
     }
 }

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f806a4515e7514187fa524efc0722c, type: 3}
   m_Name: TestLevelBuilder
   m_EditorClassIdentifier: 
-  buildCoordinates: {x: -1799.9993, y: 50, z: -500.00092}
-  currentRotationDegree: 3600
-  currentRotationVector: {x: 0, y: 3600, z: 0}
+  buildCoordinates: {x: -300, y: -50, z: 0}
+  currentRotationDegree: 0
+  currentRotationVector: {x: 0, y: 0, z: 0}
   levelPieces:
   - {fileID: 949751272906430228, guid: c39c7f2dd03e6704d9a5ca3c4ccf58b6, type: 3}
   - {fileID: 949751272906430228, guid: e3f5cfc347d6a17478b5feae7e644acf, type: 3}
@@ -24,5 +24,7 @@ MonoBehaviour:
   - {fileID: 949751272906430228, guid: 1eb785cc26df2df41a3cb526ecaa90d9, type: 3}
   - {fileID: 949751272906430228, guid: 5401ce38700a3694a9073257af5d924a, type: 3}
   - {fileID: 949751272906430228, guid: db150fce54d95f34da1762b5f5652547, type: 3}
-  nextPieceToBuild: {fileID: 949751272906430228, guid: 1eb785cc26df2df41a3cb526ecaa90d9,
+  nextPieceToBuild: {fileID: 949751272906430228, guid: 5401ce38700a3694a9073257af5d924a,
+    type: 3}
+  startPiece: {fileID: 949751272906430228, guid: 8c8ed746cbe2d3541bb67e153c94431f,
     type: 3}

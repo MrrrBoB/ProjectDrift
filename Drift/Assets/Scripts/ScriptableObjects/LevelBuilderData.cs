@@ -11,6 +11,8 @@ public class LevelBuilderData : ScriptableObject
    public GameObject[] levelPieces;
    [SerializeField]
    private GameObject nextPieceToBuild;
+   [SerializeField]
+   private GameObject startPiece;
 
    public void UpdateRotation(float newRotation)
    {
@@ -48,6 +50,12 @@ public class LevelBuilderData : ScriptableObject
       currentRotationVector = Vector3.zero;
       currentRotationDegree = 0;
       buildCoordinates = Vector3.zero;
+   }
+
+   public void CreateBase()
+   {
+      resetBuilderData();
+      Instantiate(startPiece, Vector3.zero, Quaternion.Euler(Vector3.zero));
    }
 
 }
