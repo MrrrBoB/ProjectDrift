@@ -108,8 +108,11 @@ public class CharacterInputRootMotion : MonoBehaviour
 
     public void CharacterSlide()
     {
-        cAnimator.SetTrigger(Slide);
-        Debug.Log("Slide");
+        if ( Mathf.Abs(move.y) >=0.25f)
+        {
+            cAnimator.SetTrigger(Slide);
+            Debug.Log("Slide");
+        }
     }
     
     
