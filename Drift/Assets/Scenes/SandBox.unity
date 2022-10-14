@@ -6203,6 +6203,37 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1250866233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1250866234}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1250866234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250866233}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.0960107, y: 1.8605969, z: 0.70335895}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1268089655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7120,9 +7151,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 945307908271421611, guid: a95bc5e77646f384ea6948a113865672,
         type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 2ae36b309590f204ab1b03a280d38700, type: 2}
+    - target: {fileID: 945307908271421611, guid: a95bc5e77646f384ea6948a113865672,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0eec1a23c31ff4d4bb3260a18c65cef0, type: 2}
+      objectReference: {fileID: 2100000, guid: aafb6379c739e894a973bf6aa1f4b922, type: 2}
+    - target: {fileID: 945307908271421611, guid: a95bc5e77646f384ea6948a113865672,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 707e8a3367fad1f4ebe65a78c2ca3616, type: 2}
     - target: {fileID: 945307909182526817, guid: a95bc5e77646f384ea6948a113865672,
         type: 3}
       propertyPath: m_RootOrder
