@@ -410,6 +410,9 @@ MonoBehaviour:
   chargeLossPerTick: 10
   sliderBar: {fileID: 0}
   pauseDeplete: 0
+  chargeDepletedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &168768986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6642,6 +6645,7 @@ GameObject:
   - component: {fileID: 1961414377}
   - component: {fileID: 1961414376}
   - component: {fileID: 1961414375}
+  - component: {fileID: 1961414378}
   m_Layer: 5
   m_Name: TestButton
   m_TagString: Untagged
@@ -6714,10 +6718,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2103977336}
-        m_TargetAssemblyTypeName: Battery, Assembly-CSharp
-        m_MethodName: AddCharge
-        m_Mode: 4
+      - m_Target: {fileID: 1961414378}
+        m_TargetAssemblyTypeName: SceneManaging, Assembly-CSharp
+        m_MethodName: loadScn
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6764,6 +6768,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1961414373}
   m_CullTransparentMesh: 1
+--- !u!114 &1961414378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961414373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd9f2a8d8bf08148a07ce3bba791e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2021823317
 GameObject:
   m_ObjectHideFlags: 0
