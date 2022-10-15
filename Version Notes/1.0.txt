@@ -1,0 +1,7 @@
+Character
+Textures
+Level Builder
+Skeleton Menu
+Basic Powerups
+Battery system counts down but doesn't end game yet
+Animations edited to liking
