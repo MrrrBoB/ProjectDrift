@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class LevelPiece : MonoBehaviour
 {
@@ -13,11 +14,18 @@ public class LevelPiece : MonoBehaviour
     private int lifeCycles = 3;
     public UnityEvent deathEvent;
     public UnityEvent InitializeEvent;
+    public GameObject[] listOfTraps;
+    private GameObject currentTrap;
+    public Vector3 localSpawnCoordinates;
 
-    private void Start()
+    protected void Start()
     {
+        localSpawnCoordinates = new Vector3(0, 1, 0);
         builderData.UpdateNextCoordinates(nextPiecePlacer.transform.position);
         builderData.UpdateRotation(levelRotationChange);
+        if (listOfTraps.Length > 0) 
+            currentTrap=Instantiate(listOfTraps[Random.Range(0, listOfTraps.Length)], gameObject.transform, true);
+        currentTrap.transform.localPosition = localSpawnCoordinates;
     }
 
     public void PassCycle()

@@ -155,6 +155,8 @@ MonoBehaviour:
   InitializeEvent:
     m_PersistentCalls:
       m_Calls: []
+  listOfTraps:
+  - {fileID: 8702639982678530032, guid: 63426475ee344f342bde7b51fe0101f8, type: 3}
 --- !u!114 &6718400502930686542
 MonoBehaviour:
   m_ObjectHideFlags: 0
