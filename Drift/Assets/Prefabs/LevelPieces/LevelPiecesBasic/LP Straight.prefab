@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 949751272821874630}
   - component: {fileID: 949751272821874629}
   - component: {fileID: 949751272821874628}
+  - component: {fileID: 38570548124474084}
   m_Layer: 0
   m_Name: NextSpawnPoint
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949751272821874626}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50, y: 0, z: 0}
+  m_LocalPosition: {x: -20, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -97,6 +98,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &38570548124474084
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949751272821874626}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 20, y: 1, z: 20}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &949751272906430228
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,6 +171,8 @@ MonoBehaviour:
       m_Calls: []
   listOfTraps:
   - {fileID: 8702639982678530032, guid: 63426475ee344f342bde7b51fe0101f8, type: 3}
+  - {fileID: 3321001387429501397, guid: 9a9562e38e3eed945b16003734ef42b4, type: 3}
+  localSpawnCoordinates: {x: 0, y: 0, z: 0}
 --- !u!114 &6718400502930686542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +229,7 @@ Transform:
   m_GameObject: {fileID: 949751274242227312}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 50, y: 1, z: 50}
+  m_LocalScale: {x: 20, y: 1, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 949751272906430230}

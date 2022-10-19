@@ -47,9 +47,9 @@ public class CharacterInputRootMotion : MonoBehaviour
 
     private void Start()
     {
-        m = new Vector3(0f, 0f, Time.deltaTime * 2f);
-        jumpForce = new Vector3(0, 6f, 15f);
-        jumpForceStationary = new Vector3(0, 6f, 0f);
+        m = new Vector3(0f, 0f, Time.deltaTime * .25f);
+        jumpForce = new Vector3(0, 6f, 5f);
+        jumpForceStationary = new Vector3(0, 5f, 0f);
         r = new Vector3(0f, Time.deltaTime*20f, 0f);
         rayOffset = new Vector3(0f, 0.5f, 0f);
         cAnimator.SetBool("OnGround",IsGrounded());
@@ -107,7 +107,7 @@ public class CharacterInputRootMotion : MonoBehaviour
             rBody.velocity = Vector3.zero;
             cAnimator.SetTrigger(Jump);
             if (move.y > .25)
-                rBody.AddRelativeForce(jumpForce+(jumpForce*(SpeedMultiplier*.5f)), ForceMode.Impulse);
+                rBody.AddRelativeForce(jumpForce+(jumpForce*(SpeedMultiplier*.1f)), ForceMode.Impulse);
             else
                 rBody.AddRelativeForce(jumpForceStationary, ForceMode.Impulse);
 
@@ -127,7 +127,7 @@ public class CharacterInputRootMotion : MonoBehaviour
     
     private bool IsGrounded()
     {
-        return Physics.Raycast(transform.position+rayOffset, Vector3.down, .7f);
+        return Physics.Raycast(transform.position+rayOffset, Vector3.down, .685f);
     }
 
     public void OnCollisionExit(Collision other)

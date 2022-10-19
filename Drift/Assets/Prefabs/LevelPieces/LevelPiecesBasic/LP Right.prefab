@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949751272821874626}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 50}
+  m_LocalPosition: {x: 0, y: 0, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -155,6 +155,8 @@ MonoBehaviour:
   InitializeEvent:
     m_PersistentCalls:
       m_Calls: []
+  listOfTraps: []
+  localSpawnCoordinates: {x: 0, y: 0, z: 0}
 --- !u!114 &-1429509009922386212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +213,7 @@ Transform:
   m_GameObject: {fileID: 949751274242227312}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 50, y: 1, z: 50}
+  m_LocalScale: {x: 20, y: 1, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 949751272906430230}
@@ -245,7 +247,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7423979fe325e1742b0fac870f1f8c34, type: 2}
+  - {fileID: 2100000, guid: a255152e4305e0d4a95ddc4ab196cf40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -305,7 +307,7 @@ PrefabInstance:
     - target: {fileID: 8499191708361840384, guid: e8f2e56fba0c209438b74ff51c559b14,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.01
+      value: 1.13
       objectReference: {fileID: 0}
     - target: {fileID: 8499191708361840384, guid: e8f2e56fba0c209438b74ff51c559b14,
         type: 3}
