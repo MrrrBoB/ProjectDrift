@@ -8,8 +8,8 @@ public class Hazard : MonoBehaviour
 {
     [SerializeField]
     private Material hazardMaterial;
-
-    public UnityEvent playerHitEvent;
+    [SerializeField]
+    private GameAction respondAction;
 
     private void Awake()
     {
@@ -25,8 +25,7 @@ public class Hazard : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            playerHitEvent.Invoke();
-            Debug.Log("Ouch!");
+            respondAction.RaiseAction();
         }
     }
 

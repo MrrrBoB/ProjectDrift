@@ -5,6 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - hazardMaterial: {fileID: 2100000, guid: 7423979fe325e1742b0fac870f1f8c34, type: 2}
+  - respondAction: {fileID: 11400000, guid: e156256d8c0e1114c9ab98230e7fe136, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

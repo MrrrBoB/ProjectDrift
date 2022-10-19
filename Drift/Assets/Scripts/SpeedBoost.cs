@@ -18,6 +18,8 @@ public class SpeedBoost : MonoBehaviour
 
     public void StartBoost()
     {
+        if(boostSession!=null)
+            StopCoroutine(boostSession);
         boostSession = StartCoroutine(BoostRoutine());
     }
     public IEnumerator BoostRoutine()

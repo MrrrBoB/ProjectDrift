@@ -23,9 +23,11 @@ public class LevelPiece : MonoBehaviour
         localSpawnCoordinates = new Vector3(0, 1, 0);
         builderData.UpdateNextCoordinates(nextPiecePlacer.transform.position);
         builderData.UpdateRotation(levelRotationChange);
-        if (listOfTraps.Length > 0) 
-            currentTrap=Instantiate(listOfTraps[Random.Range(0, listOfTraps.Length)], gameObject.transform, true);
-        currentTrap.transform.localPosition = localSpawnCoordinates;
+        if (listOfTraps.Length > 0)
+        {
+            currentTrap = Instantiate(listOfTraps[Random.Range(0, listOfTraps.Length)], gameObject.transform, true);
+            currentTrap.transform.localPosition = localSpawnCoordinates;
+        }
     }
 
     public void PassCycle()
