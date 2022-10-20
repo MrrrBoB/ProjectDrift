@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class LevelPiece : MonoBehaviour
 {
@@ -13,8 +14,10 @@ public class LevelPiece : MonoBehaviour
     private int lifeCycles = 3;
     public UnityEvent deathEvent;
     public UnityEvent InitializeEvent;
+    private GameObject currentTrap;
+    
 
-    private void Start()
+    protected void Start()
     {
         builderData.UpdateNextCoordinates(nextPiecePlacer.transform.position);
         builderData.UpdateRotation(levelRotationChange);

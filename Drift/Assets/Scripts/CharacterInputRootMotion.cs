@@ -20,6 +20,11 @@ public class CharacterInputRootMotion : MonoBehaviour
     private Vector3 jumpForce;
     private Vector3 jumpForceStationary;
     private Animator cAnimator;
+    //look stuff
+    private Vector2 lookInput;
+    private float turnAmount;
+    
+    
     private static readonly int IsRunning = Animator.StringToHash("IsRunning");
     private static readonly int RunDirectionFloat = Animator.StringToHash("RunDirectionFloat");
     private static readonly int Jump = Animator.StringToHash("Jump");
@@ -35,14 +40,16 @@ public class CharacterInputRootMotion : MonoBehaviour
         ctrls.Player.Slide.performed += ctx => CharacterSlide();
         ctrls.Player.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
         ctrls.Player.Move.canceled += ctx => move = Vector2.zero;
-        
+        ctrls.Player.Look.performed += ctx => lookInput = ctx.ReadValue<Vector2>();
+        ctrls.Player.Look.canceled += ctx => lookInput = Vector2.zero;
+
     }
 
     private void Start()
     {
-        m = new Vector3(0f, 0f, Time.deltaTime * 2f);
-        jumpForce = new Vector3(0, 6f, 15f);
-        jumpForceStationary = new Vector3(0, 6f, 0f);
+        m = new Vector3(0f, 0f, Time.deltaTime * .25f);
+        jumpForce = new Vector3(0, 6f, 5f);
+        jumpForceStationary = new Vector3(0, 5f, 0f);
         r = new Vector3(0f, Time.deltaTime*20f, 0f);
         rayOffset = new Vector3(0f, 0.5f, 0f);
         cAnimator.SetBool("OnGround",IsGrounded());
@@ -52,6 +59,7 @@ public class CharacterInputRootMotion : MonoBehaviour
     {
         HandleMovement();
         HandleRotation();
+        Debug.Log(move.y);
         //Debug.DrawRay(transform.position, Vector3.down, Color.green);
     }
 
@@ -81,10 +89,11 @@ public class CharacterInputRootMotion : MonoBehaviour
 
     private void HandleRotation()
     {
-        if (Mathf.Abs(move.x) >=0.15f)
+        turnAmount = move.x + lookInput.x/2;
+        if (Mathf.Abs(turnAmount) >=0.15f)
         {
-            cAnimator.SetFloat("TurnDirectionFloat", move.x);
-            transform.Rotate(r * (move.x * (1+(SpeedMultiplier/2)) * turnLock), Space.World);
+            cAnimator.SetFloat("TurnDirectionFloat", turnAmount);
+            transform.Rotate(r * (turnAmount * (1+(SpeedMultiplier/2)) * turnLock), Space.World);
         }
         else 
             cAnimator.SetFloat("TurnDirectionFloat", 0);
@@ -98,7 +107,7 @@ public class CharacterInputRootMotion : MonoBehaviour
             rBody.velocity = Vector3.zero;
             cAnimator.SetTrigger(Jump);
             if (move.y > .25)
-                rBody.AddRelativeForce(jumpForce+(jumpForce*(SpeedMultiplier*.5f)), ForceMode.Impulse);
+                rBody.AddRelativeForce(jumpForce+(jumpForce*(SpeedMultiplier*.1f)), ForceMode.Impulse);
             else
                 rBody.AddRelativeForce(jumpForceStationary, ForceMode.Impulse);
 
@@ -118,7 +127,7 @@ public class CharacterInputRootMotion : MonoBehaviour
     
     private bool IsGrounded()
     {
-        return Physics.Raycast(transform.position+rayOffset, Vector3.down, .7f);
+        return Physics.Raycast(transform.position+rayOffset, Vector3.down, .685f);
     }
 
     public void OnCollisionExit(Collision other)

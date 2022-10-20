@@ -71,6 +71,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Look"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""992ed56c-bbb9-4cbc-a065-2d2234ff1d65"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -150,6 +159,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Slide"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dc935b0c-b29f-4d0b-ade7-7f76e3feb39b"",
+                    ""path"": ""<Touchscreen>/touch0/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -163,6 +183,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Boost = m_Player.FindAction("Boost", throwIfNotFound: true);
         m_Player_Slide = m_Player.FindAction("Slide", throwIfNotFound: true);
+        m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -227,6 +248,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Boost;
     private readonly InputAction m_Player_Slide;
+    private readonly InputAction m_Player_Look;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -236,6 +258,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Boost => m_Wrapper.m_Player_Boost;
         public InputAction @Slide => m_Wrapper.m_Player_Slide;
+        public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -260,6 +283,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Slide.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSlide;
                 @Slide.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSlide;
                 @Slide.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSlide;
+                @Look.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
+                @Look.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
+                @Look.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -279,6 +305,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Slide.started += instance.OnSlide;
                 @Slide.performed += instance.OnSlide;
                 @Slide.canceled += instance.OnSlide;
+                @Look.started += instance.OnLook;
+                @Look.performed += instance.OnLook;
+                @Look.canceled += instance.OnLook;
             }
         }
     }
@@ -290,5 +319,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnBoost(InputAction.CallbackContext context);
         void OnSlide(InputAction.CallbackContext context);
+        void OnLook(InputAction.CallbackContext context);
     }
 }
