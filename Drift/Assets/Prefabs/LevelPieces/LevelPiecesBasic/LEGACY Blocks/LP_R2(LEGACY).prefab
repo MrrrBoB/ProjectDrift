@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 949751272906430229}
   - component: {fileID: 6718400502930686542}
   m_Layer: 0
-  m_Name: LP_R2
+  m_Name: LP_R2(LEGACY)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

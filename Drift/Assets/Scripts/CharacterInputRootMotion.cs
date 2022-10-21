@@ -22,7 +22,10 @@ public class CharacterInputRootMotion : MonoBehaviour
     private Animator cAnimator;
     //look stuff
     private Vector2 lookInput;
-    private float turnAmount;
+    [Range(0.0f, 10.0f)]
+    public float turnAmount;
+    
+    
     
     
     private static readonly int IsRunning = Animator.StringToHash("IsRunning");
@@ -93,7 +96,7 @@ public class CharacterInputRootMotion : MonoBehaviour
         if (Mathf.Abs(turnAmount) >=0.15f)
         {
             cAnimator.SetFloat("TurnDirectionFloat", turnAmount);
-            transform.Rotate(r * (turnAmount * (1+(SpeedMultiplier/2)) * turnLock * 5), Space.World);
+            transform.Rotate(r * (turnAmount * (1+(SpeedMultiplier/2)) * turnLock), Space.World);
         }
         else 
             cAnimator.SetFloat("TurnDirectionFloat", 0);
