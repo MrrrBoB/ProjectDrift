@@ -1,13 +1,20 @@
 {
     "m_SelectedDeviceId": "R58M219AXSR",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "R58M219AXSR",
+        "name": "com.DefaultCompany.Drift",
+        "processId": 13748,
         "exited": false
     },
     "m_SelectedPriority": 0,
-    "m_KnownPackagesForSerialization": [],
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "R58M219AXSR",
+            "name": "com.DefaultCompany.Drift",
+            "processId": 13748,
+            "exited": false
+        }
+    ],
     "m_Tags": {
         "m_Entries": [
             {

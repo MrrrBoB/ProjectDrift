@@ -89,11 +89,11 @@ public class CharacterInputRootMotion : MonoBehaviour
 
     private void HandleRotation()
     {
-        turnAmount = move.x + lookInput.x/2;
+        turnAmount = (move.x + lookInput.x/2);
         if (Mathf.Abs(turnAmount) >=0.15f)
         {
             cAnimator.SetFloat("TurnDirectionFloat", turnAmount);
-            transform.Rotate(r * (turnAmount * (1+(SpeedMultiplier/2)) * turnLock), Space.World);
+            transform.Rotate(r * (turnAmount * (1+(SpeedMultiplier/2)) * turnLock * 5), Space.World);
         }
         else 
             cAnimator.SetFloat("TurnDirectionFloat", 0);
