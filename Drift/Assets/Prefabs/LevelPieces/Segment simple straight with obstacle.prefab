@@ -311,7 +311,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5692442028960328845}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.82, y: 3.2799997, z: 7.21}
+  m_LocalPosition: {x: -2.94, y: 1.04, z: 2.96}
   m_LocalScale: {x: 4.341, y: 0.5946302, z: 4.341}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -376,7 +376,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5692442028960328845}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hazardMaterial: {fileID: 2100000, guid: 7423979fe325e1742b0fac870f1f8c34, type: 2}
-  respondAction: {fileID: 0}
+  respondAction: {fileID: 11400000, guid: e156256d8c0e1114c9ab98230e7fe136, type: 2}
 --- !u!1001 &402519032452593962
 PrefabInstance:
   m_ObjectHideFlags: 0

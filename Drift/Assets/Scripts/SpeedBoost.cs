@@ -18,8 +18,11 @@ public class SpeedBoost : MonoBehaviour
     {
         wfs = new WaitForSeconds(boostDuration);
         wfsD = new WaitForSeconds(decayFrequency);
-        decaySlider.maxValue = boostDuration;
-        SetSliderActive(false);
+        if (decaySlider != null)
+        {
+            decaySlider.maxValue = boostDuration;
+            SetSliderActive(false);
+        }
     }
 
     public void StartBoost()

@@ -7,36 +7,39 @@ using UnityEngine.InputSystem;
 //[RequireComponent(typeof(Animator))]
 public class CharacterInputRootMotion : MonoBehaviour
 {
+    //Referenced Objects
+    private Animator cAnimator;
     private PlayerControls ctrls;
     private Rigidbody rBody;
+    //speed boost
     [SerializeField] private float SpeedMultiplier;
-    private float turnLock = 1;
+    //recieving vector for input system
     private Vector2 move;
-    private bool canJump;
     //Legacy movement vectors, now are controlled via animation
-    private Vector3 m;
+    private Vector3 additionalMovement;
     private Vector3 rayOffset;
-    private Vector3 r;
     private Vector3 jumpForce;
     private Vector3 jumpForceStationary;
-    private Animator cAnimator;
-    //look stuff
+    [SerializeField] [Range(0, 20)] private float jumpDistance, jumpHeight;
+    
+    //Look and Turn
     private Vector2 lookInput;
-    [Range(0.0f, 10.0f)]
-    public float turnAmount;
-    
-    
-    
-    
-    private static readonly int IsRunning = Animator.StringToHash("IsRunning");
+    private float turnAmount;
+    private float turnLock = 1;
+    private Vector3 r;
+
+
+    //ReCaching Animator Data
     private static readonly int RunDirectionFloat = Animator.StringToHash("RunDirectionFloat");
     private static readonly int Jump = Animator.StringToHash("Jump");
     private static readonly int OnGround = Animator.StringToHash("OnGround");
     private static readonly int Slide = Animator.StringToHash("Slide");
+    private static readonly int IsMoving = Animator.StringToHash("IsMoving");
+    private static readonly int TurnDirectionFloat = Animator.StringToHash("TurnDirectionFloat");
 
     void Awake()
     {
-        cAnimator = GetComponentInChildren<Animator>();
+        cAnimator = GetComponent<Animator>();
         ctrls = new PlayerControls();
         rBody = GetComponent<Rigidbody>();
         ctrls.Player.Jump.performed += ctx => CharacterJump();
@@ -47,73 +50,64 @@ public class CharacterInputRootMotion : MonoBehaviour
         ctrls.Player.Look.canceled += ctx => lookInput = Vector2.zero;
 
     }
-
     private void Start()
     {
-        m = new Vector3(0f, 0f, Time.deltaTime * .25f);
-        jumpForce = new Vector3(0, 6f, 5f);
-        jumpForceStationary = new Vector3(0, 5f, 0f);
+        additionalMovement = new Vector3(0f, 0f, Time.deltaTime * .25f);
+        jumpForce = new Vector3(0, jumpHeight, jumpDistance);
+        jumpForceStationary = new Vector3(0, jumpHeight, 0f);
         r = new Vector3(0f, Time.deltaTime*20f, 0f);
         rayOffset = new Vector3(0f, 0.5f, 0f);
-        cAnimator.SetBool("OnGround",IsGrounded());
+        cAnimator.SetBool(OnGround,IsGrounded());
         SpeedMultiplier = 0;
     }
     private void Update()
     {
         HandleMovement();
         HandleRotation();
-        Debug.Log(move.y);
-        //Debug.DrawRay(transform.position, Vector3.down, Color.green);
-    }
-
-    public void MoveCharacter()
-    {
-        Debug.Log("Moved");
     }
 
     private void HandleMovement()
     {
         cAnimator.SetFloat(RunDirectionFloat, move.y);
-        if ( Mathf.Abs(move.y) >=0.25f)
+        if ( Mathf.Abs(move.y) >=0.25f)//artificial deadzone
         {
-            if (move.y > .25)
+            if (move.y > .25)   //if forward
             {
-                transform.Translate(m * SpeedMultiplier, Space.Self);
-                cAnimator.SetBool("IsMoving", true);
+                transform.Translate(additionalMovement * SpeedMultiplier, Space.Self);  //Add SpeedBoost if boost is active
+                cAnimator.SetBool(IsMoving, true);
             }
-            else if (move.y< (-.25))
+            else if (move.y< (-.25))    //if reverse
             {
-                cAnimator.SetBool("IsMoving", true);
+                cAnimator.SetBool(IsMoving, true);
             }
         }
         else
-            cAnimator.SetBool("IsMoving", false);
+            cAnimator.SetBool(IsMoving, false);
     }
 
     private void HandleRotation()
     {
-        turnAmount = (move.x + lookInput.x/2);
+        turnAmount = (move.x + lookInput.x/2); //combine screenswipe and input
         if (Mathf.Abs(turnAmount) >=0.15f)
         {
-            cAnimator.SetFloat("TurnDirectionFloat", turnAmount);
-            transform.Rotate(r * (turnAmount * (1+(SpeedMultiplier/2)) * turnLock), Space.World);
+            cAnimator.SetFloat(TurnDirectionFloat, turnAmount);
+            transform.Rotate(r * (turnAmount * (1+(SpeedMultiplier/2)) * turnLock), Space.World);   //rotate the character
         }
         else 
-            cAnimator.SetFloat("TurnDirectionFloat", 0);
+            cAnimator.SetFloat(TurnDirectionFloat, 0);
     }
 
     public void CharacterJump()
     {
         if (IsGrounded())
         {
-            cAnimator.applyRootMotion = false;
-            rBody.velocity = Vector3.zero;
+            cAnimator.applyRootMotion = false;  //turns off root motion for jump
+            rBody.velocity = Vector3.zero;  //stops character
             cAnimator.SetTrigger(Jump);
             if (move.y > .25)
                 rBody.AddRelativeForce(jumpForce+(jumpForce*(SpeedMultiplier*.1f)), ForceMode.Impulse);
             else
                 rBody.AddRelativeForce(jumpForceStationary, ForceMode.Impulse);
-
         }
         else Debug.Log("Not Grounded");
     }
@@ -127,46 +121,36 @@ public class CharacterInputRootMotion : MonoBehaviour
         }
     }
     
-    
-    private bool IsGrounded()
-    {
-        return Physics.Raycast(transform.position+rayOffset, Vector3.down, .685f);
-    }
-
     public void OnCollisionExit(Collision other)
     {
         if (!IsGrounded())
         {
-            //Set animator bool isFalling to true;
-            //Debug.Log("Left the ground");
             cAnimator.SetBool(OnGround, false);
             cAnimator.applyRootMotion = false;
             rBody.AddForce(rBody.velocity);
             turnLock = 0;
         }
-        //else Debug.Log("Still on ground");
     }
 
     public void OnCollisionEnter(Collision collision)
     {
         if (IsGrounded())
         {
-            //Debug.Log("Back on ground");
             cAnimator.applyRootMotion = true;
             cAnimator.SetBool(OnGround, true);
             turnLock = 1;
-            //Set animator bool is falling to false;
         }
-        //else Debug.Log("Hit something midair");
     }
 
-    public void SetSpeedMultiplier(float m)
+    public void SetSpeedMultiplier(float x)
     {
-        SpeedMultiplier = m;
+        SpeedMultiplier = x;
     }
-    
-    
-    private void OnEnable()
+    private bool IsGrounded()   //Ground check
+    {
+        return Physics.Raycast(transform.position+rayOffset, Vector3.down, .685f);
+    }
+    public void OnEnable()
     {
         ctrls.Player.Enable();
     }

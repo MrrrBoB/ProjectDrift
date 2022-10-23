@@ -26,7 +26,6 @@ public class LevelPiece : MonoBehaviour
         nextLevelCoordinate = nextPiecePlacer.transform.position;
         builderData.UpdateNextCoordinates(nextLevelCoordinate);
         builderData.UpdateRotation(levelRotationChange);
-        Debug.Log(levelRotationChange);
     }
 
     public void PassCycle()
