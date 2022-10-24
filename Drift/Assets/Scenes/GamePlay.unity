@@ -622,7 +622,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501512151}
-  m_LocalRotation: {x: 0.13601452, y: -0.6939023, z: 0.13601463, w: 0.6939018}
+  m_LocalRotation: {x: 0.1360145, y: -0.6939023, z: 0.13601461, w: 0.69390184}
   m_LocalPosition: {x: 1.2999998, y: 1.8169999, z: 0.0000010848045}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1871,17 +1871,17 @@ PrefabInstance:
     - target: {fileID: 6209731986315084177, guid: 92d757fc9b90e8b4e963fd880a2ec3bd,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.19235367
+      value: 0.19235364
       objectReference: {fileID: 0}
     - target: {fileID: 6209731986315084177, guid: 92d757fc9b90e8b4e963fd880a2ec3bd,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.000000059604645
       objectReference: {fileID: 0}
     - target: {fileID: 6209731986315084177, guid: 92d757fc9b90e8b4e963fd880a2ec3bd,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000007450581
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6209731986427576648, guid: 92d757fc9b90e8b4e963fd880a2ec3bd,
         type: 3}
@@ -2226,7 +2226,7 @@ PrefabInstance:
     - target: {fileID: 3999208849100337888, guid: 7a2455d4a8cfd514fb5813dc69eb700b,
         type: 3}
       propertyPath: chargeDepletedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RaiseAction
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3999208849100337888, guid: 7a2455d4a8cfd514fb5813dc69eb700b,
         type: 3}
