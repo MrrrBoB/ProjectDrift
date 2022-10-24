@@ -27,6 +27,11 @@ public class CharacterInputRootMotion : MonoBehaviour
     private float turnAmount;
     private float turnLock = 1;
     private Vector3 r;
+    
+    //Stored spawn coordinates
+    private Vector3 startLocation;
+    private Quaternion startRotation;
+    private Transform startTransform;
 
 
     //ReCaching Animator Data
@@ -59,6 +64,8 @@ public class CharacterInputRootMotion : MonoBehaviour
         rayOffset = new Vector3(0f, 0.5f, 0f);
         cAnimator.SetBool(OnGround,IsGrounded());
         SpeedMultiplier = 0;
+        startLocation = gameObject.transform.position;
+        startRotation = gameObject.transform.rotation;
     }
     private void Update()
     {
@@ -154,9 +161,15 @@ public class CharacterInputRootMotion : MonoBehaviour
     {
         ctrls.Player.Enable();
     }
-    private void OnDisable()
+    public void OnDisable()
     {
         ctrls.Player.Disable();
+    }
+
+    public void ResetCharacter()
+    {
+        transform.position = startLocation;
+        transform.rotation = startRotation; 
     }
     
 }

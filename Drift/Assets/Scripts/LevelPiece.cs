@@ -42,4 +42,9 @@ public class LevelPiece : MonoBehaviour
     {
         InitializeEvent.Invoke();
     }
+
+    public void destroyLevel()
+    {
+        Destroy(gameObject);
+    }
 }

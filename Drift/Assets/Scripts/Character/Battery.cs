@@ -72,4 +72,16 @@ public class Battery : MonoBehaviour
     {
         pauseDeplete = !active;
     }
+
+    public void ResetBattery()
+    {
+        if (countDown != null)
+        {
+            StopCoroutine(countDown);
+        }
+        currentCharge = maxCharge;
+        sliderBar.value = currentCharge;
+        beginBatteryDrain();
+
+    }
 }
