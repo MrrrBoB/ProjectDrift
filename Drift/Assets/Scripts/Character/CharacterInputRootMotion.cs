@@ -21,6 +21,7 @@ public class CharacterInputRootMotion : MonoBehaviour
     private Vector3 jumpForce;
     private Vector3 jumpForceStationary;
     [SerializeField] [Range(0, 20)] private float jumpDistance, jumpHeight;
+    [SerializeField] [Range(0, 100)] private float turnSensitivity;
     
     //Look and Turn
     private Vector2 lookInput;
@@ -60,7 +61,7 @@ public class CharacterInputRootMotion : MonoBehaviour
         additionalMovement = new Vector3(0f, 0f, Time.deltaTime * .25f);
         jumpForce = new Vector3(0, jumpHeight, jumpDistance);
         jumpForceStationary = new Vector3(0, jumpHeight, 0f);
-        r = new Vector3(0f, Time.deltaTime*20f, 0f);
+        r = new Vector3(0f, Time.deltaTime*turnSensitivity, 0f);
         rayOffset = new Vector3(0f, 0.5f, 0f);
         cAnimator.SetBool(OnGround,IsGrounded());
         SpeedMultiplier = 0;
@@ -94,11 +95,13 @@ public class CharacterInputRootMotion : MonoBehaviour
 
     private void HandleRotation()
     {
-        turnAmount = (move.x + lookInput.x/2); //combine screenswipe and input
+        turnAmount = move.x == 0 ? lookInput.x / 8 : move.x;
+        
+        //combine screenswipe and input i
         if (Mathf.Abs(turnAmount) >=0.15f)
         {
             cAnimator.SetFloat(TurnDirectionFloat, turnAmount);
-            transform.Rotate(r * (turnAmount * (1+(SpeedMultiplier/2)) * turnLock), Space.World);   //rotate the character
+            transform.Rotate(r * (turnAmount * (1+(SpeedMultiplier/2)) * turnLock), Space.World);               //rotate the character
         }
         else 
             cAnimator.SetFloat(TurnDirectionFloat, 0);
