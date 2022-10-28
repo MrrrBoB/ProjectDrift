@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
+[RequireComponent(typeof(BoxCollider))]
 
 public class LevelPiece : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class LevelPiece : MonoBehaviour
     public UnityEvent deathEvent;
     public UnityEvent InitializeEvent;
     private GameObject currentTrap;
+    private BoxCollider previousPiece
     
 
     protected void Start()

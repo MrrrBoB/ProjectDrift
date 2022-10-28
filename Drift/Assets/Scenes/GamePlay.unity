@@ -2239,7 +2239,7 @@ PrefabInstance:
     - target: {fileID: 6209731986427576648, guid: 92d757fc9b90e8b4e963fd880a2ec3bd,
         type: 3}
       propertyPath: turnSensitivity
-      value: 100
+      value: 67.4
       objectReference: {fileID: 0}
     - target: {fileID: 6209731986427576649, guid: 92d757fc9b90e8b4e963fd880a2ec3bd,
         type: 3}
