@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8199957459995488827}
   - component: {fileID: 8199957459995488820}
   - component: {fileID: 8199957459995488821}
+  - component: {fileID: 4637356465898520300}
   m_Layer: 0
   m_Name: SlideHoop
   m_TagString: Untagged
@@ -97,4 +98,18 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8199957459995488822}
+  m_Mesh: {fileID: -5597002278806442958, guid: 06147b8ade9692f418dcfd338a45a0ca, type: 3}
+--- !u!64 &4637356465898520300
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8199957459995488822}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -5597002278806442958, guid: 06147b8ade9692f418dcfd338a45a0ca, type: 3}
