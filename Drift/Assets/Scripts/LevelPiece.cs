@@ -7,9 +7,11 @@ using Random = UnityEngine.Random;
 
 public class LevelPiece : MonoBehaviour
 {
-    public float levelRotationChange;
+    private float levelRotationChange;
     public Vector3 nextLevelCoordinate;
-    public GameObject nextPiecePlacer;
+    public GameObject[] PiecePlacers;
+    [SerializeField]
+    private GameObject nextPiecePlacer;
     public LevelBuilderData builderData;
     private int lifeCycles = 3;
     public UnityEvent deathEvent;
@@ -19,7 +21,10 @@ public class LevelPiece : MonoBehaviour
 
     protected void Start()
     {
-        builderData.UpdateNextCoordinates(nextPiecePlacer.transform.position);
+        nextPiecePlacer = PiecePlacers[Random.Range(0, PiecePlacers.Length)];
+        levelRotationChange = nextPiecePlacer.transform.localEulerAngles.y;
+        nextLevelCoordinate = nextPiecePlacer.transform.position;
+        builderData.UpdateNextCoordinates(nextLevelCoordinate);
         builderData.UpdateRotation(levelRotationChange);
     }
 
@@ -36,5 +41,10 @@ public class LevelPiece : MonoBehaviour
     public void Initialize()
     {
         InitializeEvent.Invoke();
+    }
+
+    public void destroyLevel()
+    {
+        Destroy(gameObject);
     }
 }

@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f806a4515e7514187fa524efc0722c, type: 3}
   m_Name: TestLevelBuilder
   m_EditorClassIdentifier: 
-  buildCoordinates: {x: -50, y: 0, z: 0}
-  currentRotationDegree: 0
-  currentRotationVector: {x: 0, y: 0, z: 0}
+  buildCoordinates: {x: -65.22, y: 0, z: -33.140003}
+  currentRotationDegree: 270
+  currentRotationVector: {x: 0, y: 270, z: 0}
   levelPieces:
-  - {fileID: 949751272906430228, guid: c39c7f2dd03e6704d9a5ca3c4ccf58b6, type: 3}
-  - {fileID: 949751272906430228, guid: e3f5cfc347d6a17478b5feae7e644acf, type: 3}
-  - {fileID: 949751272906430228, guid: cb18441f319735d45830f10574d479bc, type: 3}
+  - {fileID: 949751272906430228, guid: c64a8dad73ca2e443861719a502d4c78, type: 3}
   - {fileID: 949751272906430228, guid: a54d372a197b1e14eb1c22f9fbc47872, type: 3}
-  - {fileID: 949751272906430228, guid: 3e1edbbb439daf34483436770950b973, type: 3}
-  - {fileID: 949751272906430228, guid: 1eb785cc26df2df41a3cb526ecaa90d9, type: 3}
-  nextPieceToBuild: {fileID: 949751272906430228, guid: 1eb785cc26df2df41a3cb526ecaa90d9,
+  - {fileID: 949751272906430228, guid: c39c7f2dd03e6704d9a5ca3c4ccf58b6, type: 3}
+  - {fileID: 949751272906430228, guid: 4b4be11748fa1154dbade8148af3d9f3, type: 3}
+  - {fileID: 949751272906430228, guid: 049c1a9e3204bba40bdfd2e143b6a7c5, type: 3}
+  - {fileID: 949751272906430228, guid: 1961db6aa899f1d46ba6c488ebf6573d, type: 3}
+  nextPieceToBuild: {fileID: 949751272906430228, guid: 049c1a9e3204bba40bdfd2e143b6a7c5,
     type: 3}
   startPiece: {fileID: 949751272906430228, guid: 8c8ed746cbe2d3541bb67e153c94431f,
     type: 3}

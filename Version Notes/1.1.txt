@@ -1,0 +1,3 @@
+Traps are spawned from placeable gameobjects and not from pieces themselves
+Implemented a screen swipe mechanic but it needs tuning. 
+Rescaled entire game to match physics engine, might have missed an object or two.

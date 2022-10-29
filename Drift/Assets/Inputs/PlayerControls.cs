@@ -163,7 +163,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""dc935b0c-b29f-4d0b-ade7-7f76e3feb39b"",
-                    ""path"": ""<Touchscreen>/touch0/delta"",
+                    ""path"": ""<Touchscreen>/touch1/delta"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

@@ -8,13 +8,13 @@ public class RandomItemSpawner : MonoBehaviour
 
     private GameObject thisObject;
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         SpawnThing();
     }
 
     // Update is called once per frame
-    void SpawnThing()
+    protected void SpawnThing()
     {
         if (listOfItems.Length > 0)
         {
