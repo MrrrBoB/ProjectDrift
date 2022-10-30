@@ -10,6 +10,7 @@ public class Hazard : MonoBehaviour
     private Material hazardMaterial;
     [SerializeField]
     private GameAction respondAction;
+    private Material mat;
 
     private void Awake()
     {
@@ -19,7 +20,11 @@ public class Hazard : MonoBehaviour
         }
     }
 
-    
+    private void Start()
+    {
+        mat = GetComponent<MeshRenderer>().material;
+        mat.SetFloat("_MaterialTime", Time.time);
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
