@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 4698269110418228556}
   - component: {fileID: 6549330712927743364}
   - component: {fileID: 3627136223379306339}
+  - component: {fileID: 7068879559802761803}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -291,7 +292,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: bb5df982c3a97374d92a40f4be63be06, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -327,6 +328,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5302568919011541938, guid: e7df218a9df225d47a37b2e95bce5316, type: 3}
+--- !u!114 &7068879559802761803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7361658114437646256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaecf61e2970ca347a2a829e398d561f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4799400490961889154
 PrefabInstance:
   m_ObjectHideFlags: 0
