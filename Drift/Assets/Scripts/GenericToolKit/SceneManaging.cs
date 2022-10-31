@@ -9,6 +9,7 @@ public class SceneManaging : MonoBehaviour
     
     public void loadScn(int scnfour)
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(scnfour);
     }
 

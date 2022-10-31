@@ -61,7 +61,7 @@ public class CharacterInputRootMotion : MonoBehaviour
         additionalMovement = new Vector3(0f, 0f, Time.deltaTime * .25f);
         jumpForce = new Vector3(0, jumpHeight, jumpDistance);
         jumpForceStationary = new Vector3(0, jumpHeight, 0f);
-        r = new Vector3(0f, Time.deltaTime*turnSensitivity, 0f);
+        r = new Vector3(0f, turnSensitivity, 0f);
         rayOffset = new Vector3(0f, 0.5f, 0f);
         cAnimator.SetBool(OnGround,IsGrounded());
         SpeedMultiplier = 0;
@@ -101,7 +101,7 @@ public class CharacterInputRootMotion : MonoBehaviour
         if (Mathf.Abs(turnAmount) >=0.15f)
         {
             cAnimator.SetFloat(TurnDirectionFloat, turnAmount);
-            transform.Rotate(r * (turnAmount * (1+(SpeedMultiplier/2)) * turnLock), Space.World);               //rotate the character
+            transform.Rotate(r * (turnAmount * (1+(SpeedMultiplier/2)) * turnLock * Time.deltaTime * 2), Space.World);               //rotate the character
         }
         else 
             cAnimator.SetFloat(TurnDirectionFloat, 0);
@@ -168,7 +168,11 @@ public class CharacterInputRootMotion : MonoBehaviour
     {
         ctrls.Player.Disable();
     }
-
+    public void setLookSensitivity(float input)
+    {
+        turnSensitivity = input;
+        r.y = turnSensitivity;
+    }
     public void ResetCharacter()
     {
         transform.position = startLocation;
