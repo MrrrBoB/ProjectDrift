@@ -21,7 +21,8 @@ public class CharacterInputRootMotion : MonoBehaviour
     private Vector3 jumpForce;
     private Vector3 jumpForceStationary;
     [SerializeField] [Range(0, 20)] private float jumpDistance, jumpHeight;
-    [SerializeField] [Range(0, 100)] private float turnSensitivity;
+    [SerializeField] [Range(0, 100)] private float turnFactor;
+    private float turnSensitivity;
     
     //Look and Turn
     private Vector2 lookInput;
@@ -54,6 +55,7 @@ public class CharacterInputRootMotion : MonoBehaviour
         ctrls.Player.Move.canceled += ctx => move = Vector2.zero;
         ctrls.Player.Look.performed += ctx => lookInput = ctx.ReadValue<Vector2>();
         ctrls.Player.Look.canceled += ctx => lookInput = Vector2.zero;
+        turnFactor = 2;
 
     }
     private void Start()
@@ -61,7 +63,7 @@ public class CharacterInputRootMotion : MonoBehaviour
         additionalMovement = new Vector3(0f, 0f, Time.deltaTime * .25f);
         jumpForce = new Vector3(0, jumpHeight, jumpDistance);
         jumpForceStationary = new Vector3(0, jumpHeight, 0f);
-        r = new Vector3(0f, turnSensitivity, 0f);
+        r = new Vector3(0f, turnFactor, 0f);
         rayOffset = new Vector3(0f, 0.5f, 0f);
         cAnimator.SetBool(OnGround,IsGrounded());
         SpeedMultiplier = 0;
@@ -101,7 +103,7 @@ public class CharacterInputRootMotion : MonoBehaviour
         if (Mathf.Abs(turnAmount) >=0.15f)
         {
             cAnimator.SetFloat(TurnDirectionFloat, turnAmount);
-            transform.Rotate(r * (turnAmount * (1+(SpeedMultiplier/2)) * turnLock * Time.deltaTime * 2), Space.World);               //rotate the character
+            transform.Rotate(r * (turnAmount * turnSensitivity * (1+(SpeedMultiplier/2)) * turnLock * Time.deltaTime), Space.World);               //rotate the character
         }
         else 
             cAnimator.SetFloat(TurnDirectionFloat, 0);
@@ -170,8 +172,7 @@ public class CharacterInputRootMotion : MonoBehaviour
     }
     public void setLookSensitivity(float input)
     {
-        turnSensitivity = input;
-        r.y = turnSensitivity;
+        turnSensitivity = 10 + input*100;
     }
     public void ResetCharacter()
     {
