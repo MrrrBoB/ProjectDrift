@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff1d5e99e5cc2e4d84c07dbb1ecbdad, type: 3}
   m_Name: Player Settings
   m_EditorClassIdentifier: 
-  PostProccessingEnabled: 0
-  characterSensitivity: 0
+  PostProccessingEnabled: 1
+  characterSensitivity: 0.5

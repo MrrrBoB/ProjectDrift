@@ -29,16 +29,12 @@ public class SettingsBehavior : MonoBehaviour
       applyPPToggle();
       ApplySensitivity();
    }
-
-   public void revertSettings() // reset the settings from storage
-   {
-      LoadSettings();
-   }
-
-   private void LoadSettings() //load settings from storage
+   
+   public void LoadSettings() //load settings from storage
    {
       PPtoggle.isOn = dataReference.PostProccessingEnabled;
       sensitivitySlider.value = dataReference.characterSensitivity;
+      Debug.Log("Settings loaded from data");
    }
 
 
@@ -52,10 +48,5 @@ public class SettingsBehavior : MonoBehaviour
    {
       characterController.setLookSensitivity(sensitivitySlider.value);
       dataReference.characterSensitivity = sensitivitySlider.value;
-   }
-
-   private void OnEnable()
-   {
-      LoadSettings();
    }
 }

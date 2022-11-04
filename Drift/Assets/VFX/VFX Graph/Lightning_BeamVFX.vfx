@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d4c867f6b72b714dbb5fd1780afe208, type: 3}
-  m_Name: LightningVFX
+  m_Name: Lightning_BeamVFX
   m_EditorClassIdentifier: 
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 0}
@@ -132,7 +132,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":6.730779647827148,"g":1.0132139921188355,"b":0.3492386043071747,"a":0.0}'
+      m_SerializableObject: '{"r":8.986119270324707,"g":4.5814924240112309,"b":2.500854015350342,"a":0.0}'
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -204,7 +204,7 @@ VisualEffectResource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LightningVFX
+  m_Name: Lightning_BeamVFX
   m_Graph: {fileID: 114350483966674976}
   m_Infos:
     m_RendererSettings:
@@ -1802,7 +1802,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.0,"y":0.0,"z":-5.0}'
+      m_SerializableObject: '{"x":0.0,"y":0.0,"z":-5.5}'
     m_Space: 2147483647
   m_Property:
     name: Pivot
@@ -2227,7 +2227,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":6.730779647827148,"g":1.0132139921188355,"b":0.3492386043071747,"a":0.0}'
+      m_SerializableObject: '{"r":8.986119270324707,"g":4.5814924240112309,"b":2.500854015350342,"a":0.0}'
     m_Space: 2147483647
   m_Property:
     name: o
