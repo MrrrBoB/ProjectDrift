@@ -37,4 +37,12 @@ public class FloatData : ScriptableObject
          SetNum(dataObj.GetNum());
       }
    }
+
+   public void compareHighScore(FloatData HSData)
+   {
+      if (HSData.GetNum() < num)
+      {
+         HSData.SetNum(num);
+      }
+   }
 }

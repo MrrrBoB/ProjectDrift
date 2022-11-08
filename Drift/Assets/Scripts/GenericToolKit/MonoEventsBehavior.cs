@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 public class MonoEventsBehavior : MonoBehaviour
 {
-    public UnityEvent startEvent, collisionEvent, triggerEnterEvent, destroyEvent, disableEvent, quitEvent, tapEvent;
+    public UnityEvent startEvent, collisionEvent, triggerEnterEvent, destroyEvent, disableEvent, quitEvent, tapEvent, enableEvent;
    
     void Start()
     {
@@ -31,6 +31,11 @@ public class MonoEventsBehavior : MonoBehaviour
     private void OnDestroy()
     {
         destroyEvent.Invoke();
+    }
+
+    private void OnEnable()
+    {
+        enableEvent.Invoke();
     }
 
     private void OnDisable()

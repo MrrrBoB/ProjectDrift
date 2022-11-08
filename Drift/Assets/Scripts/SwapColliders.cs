@@ -22,4 +22,5 @@ public class SwapColliders : MonoBehaviour
         col1.enabled = !col1.enabled;
         col2.enabled = !col2.enabled;
     }
+    
 }
