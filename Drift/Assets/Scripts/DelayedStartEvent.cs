@@ -9,7 +9,7 @@ public class DelayedStartEvent : MonoBehaviour
     public UnityEvent delayedEvent;
     public float delay;
 
-    private void Awake()
+    private void Start()
     {
         StartCoroutine(StartCountDown());
     }

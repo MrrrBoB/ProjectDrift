@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1061596785020440374}
   - component: {fileID: 3751630125870418363}
   - component: {fileID: 3764145828913161174}
+  - component: {fileID: 1763720009265524433}
   m_Layer: 0
   m_Name: Gate
   m_TagString: Untagged
@@ -51,7 +52,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423087328092190845}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -129,6 +130,34 @@ MonoBehaviour:
   actionToRaise: {fileID: 11400000, guid: 58b327b30a9d5c24483ca52ad625e122, type: 2}
   cTag: Player
   disableOnTrigger: 1
+--- !u!114 &1763720009265524433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423087328092190845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d811f9bb05e9274a8641bf189777707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2303703637758499274}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  delay: 1
 --- !u!1 &482615986153595035
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +167,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3013364305001035759}
-  - component: {fileID: 2948109657533831132}
   m_Layer: 0
   m_Name: TriggerNextLevel
   m_TagString: Untagged
@@ -164,34 +192,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2948109657533831132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 482615986153595035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7e7eadf8074216479d4c4a3f268624a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delayCount: 1
-  delayedEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 423087328092190845}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &2687625550106855809
 PrefabInstance:
   m_ObjectHideFlags: 0
