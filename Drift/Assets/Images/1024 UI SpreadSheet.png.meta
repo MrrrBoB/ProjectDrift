@@ -334,7 +334,7 @@ TextureImporter:
         width: 77
         height: 76
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -355,7 +355,7 @@ TextureImporter:
         width: 94
         height: 94
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -363,6 +363,27 @@ TextureImporter:
       bones: []
       spriteID: 4f99fab501a94e042bc007f6ee64797f
       internalID: -1022100560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GateCounter
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 772
+        width: 125
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34fd2ece0687af640aed0be801dbc00a
+      internalID: 732613423
       vertices: []
       indices: 
       edges: []
@@ -391,6 +412,7 @@ TextureImporter:
       Cut Button Large: 688768971
       Pause Icon: -1667200044
       Solid Button Large: 221367770
+      GateCounter: 732613423
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

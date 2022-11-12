@@ -168,7 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3013364305001035759}
   m_Layer: 0
-  m_Name: TriggerNextLevel
+  m_Name: Gate_Complimentary Gate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

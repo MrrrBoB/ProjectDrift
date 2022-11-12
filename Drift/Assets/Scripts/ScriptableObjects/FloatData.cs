@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class FloatData : ScriptableObject
 {
-   private float num;
+   public float num;
 
    public void SetNum(float val)
    {
@@ -32,7 +32,8 @@ public class FloatData : ScriptableObject
 
    public void CompareValue(FloatData dataObj)
    {
-      if (dataObj.GetNum() > num)
+      Debug.Log(dataObj.num);
+      if (dataObj.num >= num)
       {
          SetNum(dataObj.GetNum());
       }
