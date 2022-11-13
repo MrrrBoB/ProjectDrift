@@ -353,7 +353,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501512151}
-  m_LocalRotation: {x: 0.13601458, y: -0.6939021, z: 0.1360146, w: 0.693902}
+  m_LocalRotation: {x: 0.13601455, y: -0.6939021, z: 0.13601457, w: 0.6939021}
   m_LocalPosition: {x: 1.2999998, y: 1.617, z: 0.00000015497207}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -585,17 +585,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1254300408}
-        m_TargetAssemblyTypeName: PauseBehavior, Assembly-CSharp
-        m_MethodName: setTimeActive
-        m_Mode: 6
+      - m_Target: {fileID: 4634603332227349457}
+        m_TargetAssemblyTypeName: DelayedEvent, Assembly-CSharp
+        m_MethodName: StartCountDown
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1494935917 stripped
 GameObject:
@@ -1555,17 +1555,17 @@ PrefabInstance:
     - target: {fileID: 6209731986315084177, guid: 92d757fc9b90e8b4e963fd880a2ec3bd,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9813256
+      value: 0.9813257
       objectReference: {fileID: 0}
     - target: {fileID: 6209731986315084177, guid: 92d757fc9b90e8b4e963fd880a2ec3bd,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.19235367
+      value: 0.1923536
       objectReference: {fileID: 0}
     - target: {fileID: 6209731986315084177, guid: 92d757fc9b90e8b4e963fd880a2ec3bd,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000059604638
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6209731986315084177, guid: 92d757fc9b90e8b4e963fd880a2ec3bd,
         type: 3}
@@ -1756,6 +1756,34 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5010715007867757813}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4634603332227349457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634603332227349456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e7eadf8074216479d4c4a3f268624a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayCount: 1
+  delayedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1254300408}
+        m_TargetAssemblyTypeName: PauseBehavior, Assembly-CSharp
+        m_MethodName: setTimeActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4932165121144506365 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 142761464611922696, guid: 3eebaeb1ca2b44142a983402d62fb080,
@@ -2299,7 +2327,7 @@ PrefabInstance:
     - target: {fileID: 5010715007967695149, guid: 3eebaeb1ca2b44142a983402d62fb080,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -25.000122
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 5245687486874319208, guid: 3eebaeb1ca2b44142a983402d62fb080,
         type: 3}
