@@ -226,6 +226,52 @@ PrefabInstance:
       propertyPath: m_Name
       value: Beam Obstacle OnOff
       objectReference: {fileID: 0}
+    - target: {fileID: 5531554822573222295, guid: dba1f883881c6d841b6abdf20ba305ff,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6775893101912294841, guid: 59926dd52087d614d996fc74917df927,
+        type: 3}
+    - target: {fileID: 5588104757627171412, guid: dba1f883881c6d841b6abdf20ba305ff,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.7016122
+      objectReference: {fileID: 0}
+    - target: {fileID: 5588104757627171412, guid: dba1f883881c6d841b6abdf20ba305ff,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7016122
+      objectReference: {fileID: 0}
+    - target: {fileID: 5588104757627171412, guid: dba1f883881c6d841b6abdf20ba305ff,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.7016122
+      objectReference: {fileID: 0}
+    - target: {fileID: 5588104757627171412, guid: dba1f883881c6d841b6abdf20ba305ff,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500766625912752961, guid: dba1f883881c6d841b6abdf20ba305ff,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500766625912752961, guid: dba1f883881c6d841b6abdf20ba305ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7423979fe325e1742b0fac870f1f8c34, type: 2}
+    - target: {fileID: 6500766625912752961, guid: dba1f883881c6d841b6abdf20ba305ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 78adf075c9f7ee44688a0d61b0dcb105, type: 2}
+    - target: {fileID: 6500766625912752961, guid: dba1f883881c6d841b6abdf20ba305ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: bb5df982c3a97374d92a40f4be63be06, type: 2}
     - target: {fileID: 7114055967315674468, guid: dba1f883881c6d841b6abdf20ba305ff,
         type: 3}
       propertyPath: m_RootOrder
