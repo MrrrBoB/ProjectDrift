@@ -9,12 +9,14 @@ public class TreadMillTrap : MonoBehaviour
     private WaitForSeconds wfs;
     public float beamInterval;
     private int randomRotation;
+    private bool randomizeRotation;
     
     // Start is called before the first frame update
     void Start()
     {
         randomRotation = Random.Range(0, 4) * 90;
-        gameObject.transform.Rotate(0,randomRotation,0);
+        if(randomizeRotation)
+            gameObject.transform.Rotate(0,randomRotation,0);
         wfs = new WaitForSeconds(beamInterval);
         StartCoroutine(SpawnObjects());
     }

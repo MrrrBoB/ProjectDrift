@@ -376,7 +376,7 @@ TextureImporter:
         width: 125
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -384,6 +384,27 @@ TextureImporter:
       bones: []
       spriteID: 34fd2ece0687af640aed0be801dbc00a
       internalID: 732613423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TextBoxBackDrop
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 581
+        width: 381
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1890863dbff30604e84c3dd19ac0a991
+      internalID: -264198247
       vertices: []
       indices: 
       edges: []
@@ -406,6 +427,7 @@ TextureImporter:
       X Icon: -1932858116
       Toggle Fill: -558154486
       Large Panel Overlay: -265155338
+      TextBoxBackDrop: -264198247
       Ring Large: -1022100560
       GearWheel: -332733807
       Toggle Circle: -467990175
