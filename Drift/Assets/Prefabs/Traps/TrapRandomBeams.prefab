@@ -226,6 +226,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Beam Obstacle OnOff
       objectReference: {fileID: 0}
+    - target: {fileID: 4632159124182462302, guid: dba1f883881c6d841b6abdf20ba305ff,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5531554822573222295, guid: dba1f883881c6d841b6abdf20ba305ff,
         type: 3}
       propertyPath: m_Mesh
