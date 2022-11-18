@@ -26,11 +26,11 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 24485b5adadb2224195797251441a0e8, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 5ca018c6838e63a4cad3a709a5ececcf, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
-  m_HaloTexture: {fileID: 2800000, guid: 4c930b00324f7dd4bab64bcb855084c8, type: 3}
+  m_HaloTexture: {fileID: 2800000, guid: 347f3f263eb306041bc5373c65af5a27, type: 3}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0.19270767, b: 0.34329966, a: 1}
+  m_IndirectSpecularColor: {r: 0.0166439, g: 0.018747326, b: 0.023354022, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -368,7 +368,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501512151}
-  m_LocalRotation: {x: 0.13601458, y: -0.6939021, z: 0.1360146, w: 0.693902}
+  m_LocalRotation: {x: 0.13601455, y: -0.6939021, z: 0.13601457, w: 0.6939021}
   m_LocalPosition: {x: 1.2999998, y: 1.617, z: 0.00000015497207}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -406,7 +406,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.4074502, g: 0, b: 1, a: 1}
+  m_Color: {r: 0.4669811, g: 0.51645577, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -1973,17 +1973,17 @@ PrefabInstance:
     - target: {fileID: 6209731986315084177, guid: 92d757fc9b90e8b4e963fd880a2ec3bd,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9813256
+      value: 0.9813257
       objectReference: {fileID: 0}
     - target: {fileID: 6209731986315084177, guid: 92d757fc9b90e8b4e963fd880a2ec3bd,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.19235367
+      value: 0.1923536
       objectReference: {fileID: 0}
     - target: {fileID: 6209731986315084177, guid: 92d757fc9b90e8b4e963fd880a2ec3bd,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000059604638
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6209731986315084177, guid: 92d757fc9b90e8b4e963fd880a2ec3bd,
         type: 3}

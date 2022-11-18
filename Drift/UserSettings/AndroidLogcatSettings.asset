@@ -2,8 +2,8 @@
     "m_SelectedDeviceId": "R58M219AXSR",
     "m_SelectedPackage": {
         "deviceId": "R58M219AXSR",
-        "name": "com.DefaultCompany.Drift",
-        "processId": 23624,
+        "name": "com.DefaultCompany.Circuit",
+        "processId": 6468,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -78,6 +78,18 @@
             "deviceId": "R58M219AXSR",
             "name": "com.DefaultCompany.Drift",
             "processId": 23624,
+            "exited": false
+        },
+        {
+            "deviceId": "R58M219AXSR",
+            "name": "com.DefaultCompany.Circuit",
+            "processId": 2914,
+            "exited": false
+        },
+        {
+            "deviceId": "R58M219AXSR",
+            "name": "com.DefaultCompany.Circuit",
+            "processId": 6468,
             "exited": false
         }
     ],

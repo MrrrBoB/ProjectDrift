@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SkyBoxMat
+  m_Name: Skybox
   m_Shader: {fileID: -6465566751694194690, guid: c5304e2c7124521488b8931a16051951,
     type: 3}
   m_ValidKeywords: []
