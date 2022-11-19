@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R58M219AXSR",
         "name": "com.DefaultCompany.Circuit",
-        "processId": 6468,
+        "processId": 30310,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -90,6 +90,36 @@
             "deviceId": "R58M219AXSR",
             "name": "com.DefaultCompany.Circuit",
             "processId": 6468,
+            "exited": false
+        },
+        {
+            "deviceId": "R58M219AXSR",
+            "name": "com.DefaultCompany.Circuit",
+            "processId": 12419,
+            "exited": false
+        },
+        {
+            "deviceId": "R58M219AXSR",
+            "name": "com.DefaultCompany.Circuit",
+            "processId": 14220,
+            "exited": false
+        },
+        {
+            "deviceId": "R58M219AXSR",
+            "name": "com.DefaultCompany.Circuit",
+            "processId": 23841,
+            "exited": false
+        },
+        {
+            "deviceId": "R58M219AXSR",
+            "name": "com.DefaultCompany.Circuit",
+            "processId": 25957,
+            "exited": false
+        },
+        {
+            "deviceId": "R58M219AXSR",
+            "name": "com.DefaultCompany.Circuit",
+            "processId": 30310,
             "exited": false
         }
     ],
