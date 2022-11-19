@@ -59,11 +59,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e7eadf8074216479d4c4a3f268624a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayCount: 3
+  delayCount: 1
   delayedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: ae665b0638d351a40bea8ec214f4bf1e, type: 2}
+      - m_Target: {fileID: 11400000, guid: febb745f8cc5cb9419ea1dbd947f7aa1, type: 2}
         m_TargetAssemblyTypeName: GameAction, Assembly-CSharp
         m_MethodName: RaiseAction
         m_Mode: 1

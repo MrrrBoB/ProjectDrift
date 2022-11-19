@@ -2,8 +2,8 @@
     "m_SelectedDeviceId": "R58M219AXSR",
     "m_SelectedPackage": {
         "deviceId": "R58M219AXSR",
-        "name": "com.DefaultCompany.Drift",
-        "processId": 25090,
+        "name": "com.DefaultCompany.Circuit",
+        "processId": 1094,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -72,6 +72,60 @@
             "deviceId": "R58M219AXSR",
             "name": "com.DefaultCompany.Drift",
             "processId": 25090,
+            "exited": false
+        },
+        {
+            "deviceId": "R58M219AXSR",
+            "name": "com.DefaultCompany.Drift",
+            "processId": 23624,
+            "exited": false
+        },
+        {
+            "deviceId": "R58M219AXSR",
+            "name": "com.DefaultCompany.Circuit",
+            "processId": 2914,
+            "exited": false
+        },
+        {
+            "deviceId": "R58M219AXSR",
+            "name": "com.DefaultCompany.Circuit",
+            "processId": 6468,
+            "exited": false
+        },
+        {
+            "deviceId": "R58M219AXSR",
+            "name": "com.DefaultCompany.Circuit",
+            "processId": 12419,
+            "exited": false
+        },
+        {
+            "deviceId": "R58M219AXSR",
+            "name": "com.DefaultCompany.Circuit",
+            "processId": 14220,
+            "exited": false
+        },
+        {
+            "deviceId": "R58M219AXSR",
+            "name": "com.DefaultCompany.Circuit",
+            "processId": 23841,
+            "exited": false
+        },
+        {
+            "deviceId": "R58M219AXSR",
+            "name": "com.DefaultCompany.Circuit",
+            "processId": 25957,
+            "exited": false
+        },
+        {
+            "deviceId": "R58M219AXSR",
+            "name": "com.DefaultCompany.Circuit",
+            "processId": 30310,
+            "exited": false
+        },
+        {
+            "deviceId": "R58M219AXSR",
+            "name": "com.DefaultCompany.Circuit",
+            "processId": 1094,
             "exited": false
         }
     ],

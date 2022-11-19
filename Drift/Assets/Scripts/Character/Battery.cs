@@ -82,6 +82,7 @@ public class Battery : MonoBehaviour
         currentCharge = maxCharge;
         sliderBar.value = currentCharge;
         beginBatteryDrain();
+        Debug.Log("Reset Battery");
 
     }
 }

@@ -1,10 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
-//[RequireComponent(typeof(Animator))]
 public class CharacterInputRootMotion : MonoBehaviour
 {
     //Referenced Objects
@@ -129,7 +125,6 @@ public class CharacterInputRootMotion : MonoBehaviour
         if ( Mathf.Abs(move.y) >=0.25f)
         {
             cAnimator.SetTrigger(Slide);
-            Debug.Log("Slide");
         }
     }
     

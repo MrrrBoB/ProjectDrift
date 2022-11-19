@@ -6,12 +6,23 @@ using UnityEngine;
 [CreateAssetMenu]
 public class FloatData : ScriptableObject
 {
-   private float num;
+   public float num;
+   [SerializeField] private bool newBest;
 
    public void SetNum(float val)
    {
       num = val;
    }
+
+   public void SetNewBest(bool val)
+   {
+      newBest = val;
+   }
+   public bool IsNewBest()
+   {
+      return newBest;
+   }
+   
    public float GetNum()
    {
       return num;
@@ -32,10 +43,18 @@ public class FloatData : ScriptableObject
 
    public void CompareValue(FloatData dataObj)
    {
-      if (dataObj.GetNum() > num)
+      Debug.Log(dataObj.num);
+      if (dataObj.num > num)
       {
          SetNum(dataObj.GetNum());
+         newBest = true;
       }
+   }
+
+   public void ResetNum()
+   {
+      SetNum(0);
+      newBest = false;
    }
 
    public void compareHighScore(FloatData HSData)

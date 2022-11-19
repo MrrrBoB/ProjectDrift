@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using JetBrains.Annotations;
+
 using UnityEngine;
-using UnityEngine.Events;
 
 public class SwapColliders : MonoBehaviour
 {
@@ -13,8 +10,7 @@ public class SwapColliders : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        col1.enabled = true;
-        col2.enabled = false;
+        checkDefaultCollider();
     }
 
     public void SwapCols()
@@ -22,5 +18,10 @@ public class SwapColliders : MonoBehaviour
         col1.enabled = !col1.enabled;
         col2.enabled = !col2.enabled;
     }
-    
+
+    public void checkDefaultCollider()
+    {
+        col1.enabled = true;
+        col2.enabled = false;
+    }
 }
