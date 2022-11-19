@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R58M219AXSR",
         "name": "com.DefaultCompany.Circuit",
-        "processId": 30310,
+        "processId": 1094,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -120,6 +120,12 @@
             "deviceId": "R58M219AXSR",
             "name": "com.DefaultCompany.Circuit",
             "processId": 30310,
+            "exited": false
+        },
+        {
+            "deviceId": "R58M219AXSR",
+            "name": "com.DefaultCompany.Circuit",
+            "processId": 1094,
             "exited": false
         }
     ],
